@@ -58,7 +58,7 @@ function SignIn() {
         <div className="h-52">
           <img
             className="object-cover w-full h-full"
-            src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg"
+            src="https://images.unsplash.com/photo-1548138081-d02590416982?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1569&q=80"
             alt="Finance Tracker"
           />
         </div>
@@ -77,7 +77,7 @@ function SignIn() {
             onClick={demoAccountSignIn}
             className="flex self-start gap-2 p-4 mx-auto mt-3 font-medium text-white align-middle bg-gray-700 rounded-lg"
           >
-            Sign in with Demo Account
+           💻  Demo Account
           </button>
         </div>
       </div>

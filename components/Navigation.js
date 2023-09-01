@@ -1,13 +1,20 @@
 import { ImStatsBars } from "react-icons/im";
 import User from "../public/user.png";
 import Image from "next/image";
-import { useContext } from "react";
+import { useEffect, useRef, useContext } from "react";
 
 import { authContext } from "@/lib/store/auth-context";
 
 
 function Nav() {
   const { user, loading, logout } = useContext(authContext);
+  
+
+  const scrollToStats = () => {
+    // Set the URL hash to the stats section's id
+    window.location.hash = "#stats";
+  };
+  
   return (
     <header className="container max-w-2xl px-6 py-6 mx-auto">
     <div className="flex items-center justify-between">
@@ -33,7 +40,9 @@ function Nav() {
       {user && !loading && (
         <nav className="flex items-center gap-4">
           <div>
-            <ImStatsBars className="text-2xl" />
+           <a href="#stats">
+            <ImStatsBars className="text-2xl cursor-pointer" />
+          </a>
           </div>
           <div>
             <button onClick={logout} className="btn btn-danger">

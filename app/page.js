@@ -4,6 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { financeContext } from "@/lib/store/finance-context";
 import { authContext } from "@/lib/store/auth-context";
 
+
 import { currencyFormatter } from "@/lib/utils";
 
 import ExpenseCategoryItem from "@/components/ExpenseCategoryItem";
@@ -25,6 +26,8 @@ export default function Home() {
 
   const { expenses, income } = useContext(financeContext);
   const { user } = useContext(authContext);
+
+ 
 
   useEffect(() => {
     const newBalance =
@@ -93,6 +96,7 @@ export default function Home() {
 
         {/* Chart Section */}
         <section className="py-6">
+        <a id="stats" />
           <h3 className="text-2xl">Stats</h3>
           <div className="w-1/2 mx-auto">
             <Doughnut
