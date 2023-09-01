@@ -1,6 +1,8 @@
 "use client";
+import {useState} from 'react'
 import { currencyFormatter } from "@/lib/utils";
 import ExpenseCategoryItem from "@/components/ExpenseCategoryItem";
+import Modal from "@/components/Modal";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
@@ -42,7 +44,16 @@ const DUMMY_DATA = [
 ];
 
 export default function Home() {
+
+  const [modalIsOpen, setModalIsOpen] = useState(true);
+
   return (
+    <>
+   {/* Modal */}
+   <Modal show={modalIsOpen} onClose={setModalIsOpen}>
+        <h3>Hello World</h3>
+      </Modal>
+   
     <main className="container max-w-2xl px-6 mx-auto">
  <section className="py-3">
    <small className="text-gray-400 text-md">My Balance</small>
@@ -50,7 +61,14 @@ export default function Home() {
  </section>
 
  <section className="flex items-center gap-2 py-3">
-        <button className="btn btn-primary">+ Expenses</button>
+ <button
+            onClick={() => {
+              setModalIsOpen(true);
+            }}
+            className="btn btn-primary"
+          >
+            + Expenses
+          </button>
         <button className="btn btn-primary-outline">+ Income</button>
  </section>
 
@@ -91,5 +109,6 @@ export default function Home() {
         </div>
       </section>
  </main>
+ </>
   )
 }
